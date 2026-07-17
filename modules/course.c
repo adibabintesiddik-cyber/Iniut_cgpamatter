@@ -10,9 +10,17 @@
  strcpy(course.name, name);
  course.credit = credit;
 
+<<<<<<< HEAD
  return course;
  }
 void viewCourse(Course course)
+=======
+return course;
+ }
+
+
+ void viewCourse(Course course)
+>>>>>>> feature001
  {
  printf("Code: %s\n", course.code);
  printf("Name: %s\n", course.name);
