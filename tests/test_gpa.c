@@ -32,8 +32,8 @@ CourseResult result = createCourseResult(&course, 105);
  }
 
  int main()
- {
-printf("GPA module tests\n");
+{
+ printf("GPA module tests\n");
  int passed = 0;
  int total = 0;
 
@@ -45,6 +45,6 @@ if (testCGPA()) passed++;
  if (testLetterGrade()) passed++;
 
  printf("Passed %d/%d tests\n", passed, total);
-if (passed == total) return 0;
-return 1;
+ if (passed == total) return 0;
+ return 1;
  }
