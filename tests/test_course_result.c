@@ -1,31 +1,48 @@
 #include <stdio.h>
  #include "course.h"
- #include "courseResult.h"
-
- int testResultCourse()
+  #include "courseResult.h"
+ int testCompletedResult()
  {
  Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5);
- CourseResult result = createCourseResult(&course, 77);
- return result.course == &course;
+ CourseResult result = createCompletedCourseResult(&course, 120);
+ return result.completed == 1;
  }
 
- int testResultMarks()
+ int testCompletedMarks()
  {
 Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5);
- CourseResult result = createCourseResult(&course, 77);
- return result.marks == 77;
-}
+ CourseResult result = createCompletedCourseResult(&course, 120);
+ return result.marks == 120;
+ }
 
-int main()
+ int testIncompleteMarks()
+ {
+ Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5);
+ CourseResult incomplete = createIncompleteCourseResult(&course);
+ return incomplete.marks == 0.0;
+ }
+
+ int testIncompleteResult()
+ {
+ Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5);
+ CourseResult incomplete = createIncompleteCourseResult(&course);
+ return incomplete.completed == 0;
+ }
+
+ int main()
  {
  printf("Course result module tests\n");
  int passed = 0;
  int total = 0;
 
  total++;
- if (testResultCourse()) passed++;
+ if (testCompletedResult()) passed++;
  total++;
- if (testResultMarks()) passed++;
+ if (testCompletedMarks()) passed++;
+ total++;
+ if (testIncompleteMarks()) passed++;
+ total++;
+ if (testIncompleteResult()) passed++;
 
  printf("Passed %d/%d tests\n", passed, total);
  if (passed == total) return 0;
