@@ -4,34 +4,44 @@
 
  int testCourseCode()
  {
- Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5);
+ Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5, 2);
  return strcmp(course.code, "CSE 4202") == 0;
- }
-
+ 
  int testCourseName()
  {
- Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5);
+ Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5, 2);
  return strcmp(course.name, "Structured Programming II Lab") == 0;
  }
 
-int testCourseCredit()
+ int testCourseCredit()
  {
- Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5);
+ Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5, 2);
  return course.credit == 1.5;
  }
+
+ int testCourseSemester()
+ {
+ Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5, 2);
+  return course.semester == 2;
+}
 
  int main()
  {
  printf("Course module tests\n");
  int passed = 0;
+
+
+
  int total = 0;
 
-total++;
+ total++;
  if (testCourseCode()) passed++;
  total++;
  if (testCourseName()) passed++;
  total++;
-if (testCourseCredit()) passed++;
+ if (testCourseCredit()) passed++;
+ total++;
+ if (testCourseSemester()) passed++;
 
  printf("Passed %d/%d tests\n", passed, total);
  if (passed == total) return 0;
