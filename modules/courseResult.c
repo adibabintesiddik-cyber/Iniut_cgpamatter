@@ -104,3 +104,18 @@ for (int i = start; i < finish; i++)
  result.course->code, result.course->name, result.course->credit);
   printf("Marks: %.2f\n", result.marks);
  }
+ CourseResult createCompletedCourseResult(Course *course, double marks) {
+    CourseResult res;
+    res.course = course;
+    res.marks = marks;
+    res.completed = 1; // 1 মানে সম্পন্ন হয়েছে
+    return res;
+}
+
+CourseResult createIncompleteCourseResult(Course *course) {
+    CourseResult res;
+    res.course = course;
+    res.marks = 0.0;
+    res.completed = 0; // 0 মানে এখনো সম্পন্ন হয়নি
+    return res;
+}

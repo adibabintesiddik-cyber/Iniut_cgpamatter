@@ -10,8 +10,8 @@
  int completed;
  } CourseResult;
 
-
-
+CourseResult createCompletedCourseResult(Course *course, double marks);
+CourseResult createIncompleteCourseResult(Course *course);
  CourseResult createCourseResult(Course *course, double marks);
  void sortCourseResultsBySemester(CourseResult results[], int n_results);
  void filterCourseResultsBySemester(CourseResult results[], int n_results, int semester,
