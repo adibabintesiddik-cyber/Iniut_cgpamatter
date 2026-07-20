@@ -7,6 +7,7 @@
  {
  Course *course;
  double marks;
+ int completed;
  } CourseResult;
 
 
