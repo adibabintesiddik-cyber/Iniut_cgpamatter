@@ -6,7 +6,7 @@
  {
  Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5, 2);
  return strcmp(course.code, "CSE 4202") == 0;
- 
+ }
  int testCourseName()
  {
  Course course = createCourse("CSE 4202", "Structured Programming II Lab", 1.5, 2);
