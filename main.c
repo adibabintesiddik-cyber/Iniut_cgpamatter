@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include "course.h"
 #include "courseResult.h"
@@ -7,11 +8,14 @@ int main()
 {
 Course cse4107 = createCourse("CSE 4107", "Structured Programming I", 3.0, 1);
 Course cse4108 = createCourse("CSE 4108", "Structured Programming I Lab", 1.5, 1);
-
 Student students[3] = {
 createStudent("240041001", "Alice"),
 createStudent("240041002", "Bob"),
 createStudent("240041003", "Carol")
+=======
+Student students[2] = {
+createStudent("240041001", "Alice"),
+createStudent("240041002", "Bob")
 };
 
 addCourseResultToStudent(&students[0], createCompletedCourseResult(&cse4107, 252));
@@ -25,6 +29,9 @@ sortStudentsByCGPA(students, 3);
 for (int i = 0; i < 3; i++)
 {
 printf("%d. ", i + 1);
+
+for (int i = 0; i < 2; i++)
+{
 viewStudent(students[i]);
 }
 
