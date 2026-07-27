@@ -13,4 +13,4 @@ double calculateGPA(CourseResult results[], int n_results);
 double calculateRequiredGPA(double current_cgpa, double completed_credits,
                              double target_cgpa, double remaining_credits);
 
-#endifs
+#endif
